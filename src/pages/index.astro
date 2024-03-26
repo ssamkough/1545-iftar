@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const ACTIVITIES = [
+  {
+    description: "chillin'",
+    emoji: "🚼",
+  },
+  {
+    description: "eating a lotttttttt of yummy food",
+    emoji: "😋",
+  },
+  {
+    description: "drinking tea (probably w/ maia)",
+    emoji: "🍵",
+  },
+  {
+    description:
+      "sitting outside enjoying the fire w/ a blanket and some smores",
+    emoji: "🍫",
+  },
+  {
+    description: "boreeedddddd games",
+    emoji: "🎲",
+  },
+  {
+    description: "nerdy video games (yes that means overcooked timaf)",
+    emoji: "🎮",
+  },
+  {
+    description:
+      "taking a big stinky poop in a comfy bathroom (the basement bathroom is the only one with a bidet (i think))",
+    emoji: "🚽",
+  },
+  {
+    description:
+      "engaging in mega in-depth conversations about the political socio-economic state of the world",
+    emoji: "🤓",
+  },
+  {
+    description: "....and, watching a MOVIE ! hehehehehe",
+    emoji: "🎞️",
+  },
+];
+---
+
+<Layout>
+  <div class="container">
+    <h1>1545 iftar | ١٥٤٥ افطار</h1>
+    <h2>welcome to the iftar at 1545 on march 30th, 2024</h2>
+    <p>the theme for this iftar is...</p>
+    <br />
+    <div style="padding: 12px; border: 2px dotted #561a38;">
+      <h2 style="font-style: italic">comfort</h2>
+      <p style="font-style: italic">
+        comfort food, comfort wear, comfort vibes
+      </p>
+    </div>
+    <br />
+    <h3>table of contents</h3>
+    <ul style="padding-left: 24px;">
+      <li><a href="#attire">attire</a></li>
+      <li><a href="#foods">foods</a></li>
+      <li><a href="#program">program</a></li>
+      <li><a href="#peoples">peoples</a></li>
+    </ul>
+    <br />
+    <h3 id="attire">attire</h3>
+    <div class="body-image-text">
+      <p>
+        bring your most comfy self. whether that's in full pajamas or dressed up
+        in a suit, we'll accept you in <em>any</em> shape or form that you come in.
+      </p>
+      <img
+        src="attire.png"
+        alt="person in cute dance pose"
+        width="50"
+        height="50"
+      />
+    </div>
+    <br />
+    <h3 id="foods">foods</h3>
+    <div class="body-image-text">
+      <div>
+        <p>
+          don't worry about the entree, we got that handled. it'll be an
+          assortment of meshawi, shawarma, salad. so if you'd like, bring a <strong
+            >sweet</strong
+          >, or some <strong>juice</strong>, or even a <strong>snack</strong>.
+          whatever a comfort version of one of those looks like.
+        </p>
+        <br />
+        <p style="font-size: .9em; font-style: italic">
+          if you do bring something, homemade is preferred because i love trying
+          my friend's creations. but literally there is <strong
+            >nooooooooooo pressure</strong
+          >).
+        </p>
+      </div>
+      <img src="food.png" alt="pizza with pepperoni" width="50" height="50" />
+    </div>
+    <br />
+    <hr />
+    <br />
+    <h3 id="program">program</h3>
+    <p>
+      here are some things you <em>might</em> find yourself doing at the 1545...
+    </p>
+    <ul style="padding-left: 24px;">
+      {
+        ACTIVITIES.map(({ description, emoji }) => (
+          <li style="margin: 10px 0">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+              <span>{description}</span>
+              <span>{emoji}</span>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+    <br />
+    <hr />
+    <br />
+    <h3 id="peoples">peoples</h3>
+    <p>wow, look at all these beautiful folk that are coming:</p>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: 500px;
+  }
+  .body-image-text {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+</style>

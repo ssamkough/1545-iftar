@@ -1,0 +1,104 @@
+---
+const TITLE = "1545 iftar";
+const DESCRIPTION = "iftar at the 1545 w/ loved ones on march 30th 2024";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={DESCRIPTION} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{TITLE}</title>
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={TITLE} />
+    <meta property="og:description" content={DESCRIPTION} />
+    <meta property="og:url" content="https://1545.sammy.pizza" />
+    <meta property="og:site_name" content={TITLE} />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 20px 40px;
+    font-family:
+      Palatino,
+      Charter,
+      Helvetica,
+      Seravek,
+      Helvetica Neue,
+      sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    color: #561a38;
+    background-color: lightsteelblue;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Athelas, Avenir, Helvetica, Arial, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+
+  a {
+    color: #4d4608;
+  }
+</style>
