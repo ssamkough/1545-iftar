@@ -97,7 +97,7 @@ const peoples = await db.select().from(Person);
           if you do bring something, homemade is preferred because i love trying
           my friend's creations. but literally there is <strong
             >nooooooooooo pressure</strong
-          >).
+          >.
         </p>
       </div>
       <img src="food.png" alt="pizza with pepperoni" width="50" height="50" />
@@ -128,48 +128,61 @@ const peoples = await db.select().from(Person);
     <p>wow, look at all these beautiful folk 🤩</p>
     <br />
     {
-      peoples.map(
-        ({
-          name,
-          image_url,
-          nickname,
-          height,
-          favorite_foods,
-          item_bringing,
-        }) => (
-          <div style="border: 4px dotted #561a38; padding: 16px">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <img
-                src={image_url}
-                alt={`profile of ${name}`}
-                width="100"
-                height="100"
-                loading="lazy"
-              />
-              <h2>{name}</h2>
-            </div>
-            <p>
-              my nickname for them is <strong>{nickname}</strong>
-            </p>
-            <p>
-              they absolutely love <strong>{favorite_foods}</strong>
-            </p>
-            <p>
-              approximately <strong>{height}</strong>
-            </p>
-            <br />
-            <hr />
-            <br />
-            <p>
-              the item that they'll be bringing is......
+      peoples
+        .sort((a, b) => {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        })
+        .map(
+          ({
+            name,
+            image_url,
+            nickname,
+            height,
+            favorite_foods,
+            item_bringing,
+          }) => (
+            <>
+              <div style="border: 4px dotted #561a38; padding: 16px">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <img
+                    src={image_url}
+                    alt={`profile of ${name}`}
+                    width="100"
+                    height="100"
+                    loading="lazy"
+                  />
+                  <h2>{name}</h2>
+                </div>
+                <br />
+                <p>
+                  my nickname for them is <strong>{nickname}</strong>
+                </p>
+                <p>
+                  they absolutely love <strong>{favorite_foods}</strong>
+                </p>
+                <p>
+                  height approximation <strong>{height}</strong>
+                </p>
+                <br />
+                <hr />
+                <br />
+                <p>
+                  the item that they'll be bringing is......
+                  <br />
+                  <strong>{item_bringing}</strong>!
+                </p>
+              </div>
               <br />
-              <strong>{item_bringing}</strong>!
-            </p>
-          </div>
+            </>
+          )
         )
-      )
     }
-    <br />
   </div>
 </Layout>
 

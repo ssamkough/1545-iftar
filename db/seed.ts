@@ -11,5 +11,14 @@ export default async function () {
       item_bringing: "pIzzA",
       image_url: "/food.png",
     },
+    {
+      id: 2,
+      name: "omar",
+      nickname: "o-meazu",
+      height: "5'6",
+      favorite_foods: "soup",
+      item_bringing: "big soup",
+      image_url: "/attire.png",
+    },
   ]);
 }
