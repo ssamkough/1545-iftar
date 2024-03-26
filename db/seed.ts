@@ -10,6 +10,7 @@ export default async function () {
       favorite_foods: "pizza!",
       item_bringing: "pIzzA",
       image_url: "/food.png",
+      a_thing_i_love: "poop",
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ export default async function () {
       favorite_foods: "soup",
       item_bringing: "big soup",
       image_url: "/attire.png",
+      a_thing_i_love: "their butt",
     },
   ]);
 }

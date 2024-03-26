@@ -146,6 +146,7 @@ const peoples = await db.select().from(Person);
             height,
             favorite_foods,
             item_bringing,
+            a_thing_i_love,
           }) => (
             <>
               <div style="border: 4px dotted #561a38; padding: 16px">
@@ -168,6 +169,10 @@ const peoples = await db.select().from(Person);
                 </p>
                 <p>
                   height approximation <strong>{height}</strong>
+                </p>
+                <p>
+                  something i love about them is{" "}
+                  <strong>{a_thing_i_love}</strong> {`<3`}
                 </p>
                 <br />
                 <hr />
