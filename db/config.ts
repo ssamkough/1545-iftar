@@ -9,7 +9,7 @@ const Person = defineTable({
     favorite_foods: column.text(),
     item_bringing: column.text(),
     image_url: column.text(),
-    a_thing_i_love: column.text(),
+    a_thing_i_love: column.text({ default: "their smile" }),
   },
 });
 
