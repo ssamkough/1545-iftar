@@ -1,4 +1,5 @@
 ---
+import { Person, db } from "astro:db";
 import Layout from "../layouts/Layout.astro";
 
 const ACTIVITIES = [
@@ -42,6 +43,8 @@ const ACTIVITIES = [
     emoji: "🎞️",
   },
 ];
+
+const peoples = await db.select().from(Person);
 ---
 
 <Layout>
@@ -122,7 +125,51 @@ const ACTIVITIES = [
     <hr />
     <br />
     <h3 id="peoples">peoples</h3>
-    <p>wow, look at all these beautiful folk that are coming:</p>
+    <p>wow, look at all these beautiful folk 🤩</p>
+    <br />
+    {
+      peoples.map(
+        ({
+          name,
+          image_url,
+          nickname,
+          height,
+          favorite_foods,
+          item_bringing,
+        }) => (
+          <div style="border: 4px dotted #561a38; padding: 16px">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <img
+                src={image_url}
+                alt={`profile of ${name}`}
+                width="100"
+                height="100"
+                loading="lazy"
+              />
+              <h2>{name}</h2>
+            </div>
+            <p>
+              my nickname for them is <strong>{nickname}</strong>
+            </p>
+            <p>
+              they absolutely love <strong>{favorite_foods}</strong>
+            </p>
+            <p>
+              approximately <strong>{height}</strong>
+            </p>
+            <br />
+            <hr />
+            <br />
+            <p>
+              the item that they'll be bringing is......
+              <br />
+              <strong>{item_bringing}</strong>!
+            </p>
+          </div>
+        )
+      )
+    }
+    <br />
   </div>
 </Layout>
 
